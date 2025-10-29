@@ -1,0 +1,232 @@
+.card, .best-card, .selected-card, .best-selected-card {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    cursor: pointer;
+    padding: 1rem;
+    gap: 0;
+    background-color: #313637;
+    border-radius: 40px;
+    border: 2px solid #484D4E;
+    width: 30%;
+    transition: all 0.3s;
+}
+
+.best-card, .best-selected-card {
+    border-radius: 34px;
+    width: 748px;
+}
+
+.selected-card, .best-selected-card {
+    border-color: #FDB056;
+}
+
+.active-sale-container, .not-active-sale-container {
+    display: flex;
+    justify-content: space-between;
+    font-weight: 500;
+    font-size: 1.125rem;
+}
+
+.active-sale-container {
+    position: relative;
+    top: -0.25rem;
+    right: 1rem;
+}
+
+.not-active-sale-container {
+    position: absolute;
+    top: 0.75rem;
+    right: 2rem;
+}
+
+.active-sale-text, .not-active-sale-text {
+    font-size: 1.5rem;
+    padding: 0.25rem 0.5rem;
+}
+
+.active-sale-text {
+    background-color: #FD5656;
+    color: white;
+    border-bottom-left-radius: 0.5rem;
+    border-bottom-right-radius: 0.5rem;
+    position: relative;
+    top: -0.875rem;
+    right: -1.875rem;
+}
+
+.not-active-sale-text {
+    position: relative;
+    top: -0.875rem;
+    right: -1.125rem;
+    visibility: hidden;
+}
+
+.hit {
+    color: #FDB056;
+}
+
+.card-block {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 1.25rem;
+}
+
+.best-card-block {
+    gap: 3rem;
+    justify-content: center;
+    display: flex;
+    margin-bottom: 1.25rem;
+}
+
+.content-part {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.period {
+    color: white;
+    font-weight: 500;
+    font-size: 1.5rem;
+    margin: 0.5rem 0;
+}
+
+
+.price-container {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+}
+
+.price, .best-price {
+    font-size: 3rem;
+    font-weight: 600;
+    color: white;
+}
+
+.best-price {
+    color: #FDB056;
+}
+
+.old-price {
+    color: #919191;
+    font-size: 1.5rem;
+    font-weight: 400;
+    text-decoration: line-through;
+}
+
+.best-text {
+    display: flex;
+    align-items: center;
+    max-width: 328px;
+    color: white;
+    font-size: 1rem;
+    padding: 0 0.5rem;
+}
+
+.not-best-text {
+    display: flex;
+    color: white;
+    font-size: 1rem;
+    margin: 0.75rem 0;
+    padding: 0 0.5rem;
+}
+
+.hidden {
+    display: none;
+}
+
+/*  Анимация    */
+
+.card:hover, .best-card:hover, .selected-card:hover, .best-selected-card:hover {
+    animation: card-blink 1s infinite;
+}
+
+@keyframes card-blink {
+    0%, 100% {
+        box-shadow: 0 0 10px #FDB056;
+    }
+    50% {
+        box-shadow: 0 0 20px #FDB056;
+    }
+}
+
+button:hover {
+    animation: btn-blink 0.5s infinite alternate;
+}
+
+.glow:hover {
+    animation: glow-hover-blink 1s infinite alternate;
+}
+
+@keyframes glow-hover-blink {
+    0%, 100% {
+        box-shadow: 0 0 5px #FFD58033, 0 0 10px #FFD58022;
+    }
+    50% {
+        box-shadow: 0 0 20px #FFD58099, 0 0 40px #FFD58066;
+    }
+}
+
+/*  Адаптив */
+
+@media (max-width: 1200px) {
+    .best-text {
+        width: 40%;
+    }
+
+    .price {
+        font-size: 30px;
+    }
+
+    .period {
+        font-size: 20px;
+    }
+}
+
+@media (max-width: 600px) {
+    .card {
+        width: 100%;
+    }
+
+    .card-block {
+        display: flex;
+        flex-direction: row;
+        gap: 20px;
+    }
+
+    .best-text, .not-best-text {
+        font-size: 20px;
+    }
+
+    .period {
+        font-size: 30px;
+    }
+
+    .price {
+        font-size: 45px;
+    }
+
+    .card-block > div {
+        width: 55%;
+        display: flex;
+        flex-direction: column;
+        align-items: start;
+        padding-left: 30px;
+    }
+
+    .period, .old-price {
+        margin-bottom: 15px;
+    }
+
+    .card-block > p {
+        width: 40%;
+    }
+
+    .sale {
+        left: 70%;
+        right: 0;
+    }
+}

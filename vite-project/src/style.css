@@ -1,0 +1,331 @@
+body {
+    background-color: #232829;
+    font-family: 'Montserrat', sans-serif;
+    width: 100vw;
+    overflow-x: hidden;
+}
+
+.page {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    background-color: #232829;
+    width: 100vw;
+}
+
+header {
+    background-color: #1D5B43;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+    font-size: 1.5rem;
+    font-weight: 600;
+}
+
+.white-header-text {
+    color: white;
+    text-align: center;
+}
+
+.yellow-time, .red-time, .white-time {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    margin-top: 0.5rem;
+    font-size: 2.25rem;
+    font-weight: 700;
+}
+
+.yellow-time {
+    color: #FFBB00;
+}
+
+.red-time {
+    color: #FD5656;
+    animation: red-blink 1s infinite alternate;
+}
+
+.white-time {
+    color: white;
+}
+
+main {
+    display: flex;
+    flex-direction: column;
+    max-width: 72rem;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 2.5rem;
+    padding: 2.5rem;
+}
+
+.title {
+    font-size: 2.25rem;
+    font-weight: 700;
+    margin-bottom: 4.25rem;
+    text-align: left;
+    color: white;
+}
+
+.man-container {
+    width: 100%;
+}
+
+.tariff {
+    color: #FDB056;
+}
+
+.main-container {
+    display: flex;
+    gap: 3rem;
+    margin-bottom: 2.5rem;
+}
+
+.form {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+}
+
+.cards {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.loading {
+    font-size: 1.25rem;
+    color: white;
+}
+
+.best-result {
+    margin-top: 1rem;
+    display: flex;
+    align-items: center;
+    gap: 1.25rem;
+    background-color: #2D3233;
+    padding-left: 2rem;
+    padding: 1.25rem;
+    border-radius: 1rem;
+    width: 500px;
+}
+
+.best-result-text {
+    font-size: 1rem;
+    color: white;
+    font-weight: 400;
+}
+
+.conf-police {
+    display: flex;
+    align-items: center;
+    gap: 1.25rem;
+    margin-top: 1.25rem;
+    width: 650px;
+    font-size: 0.875rem;
+    cursor: pointer;
+}
+
+.agreement {
+    font-size: 1rem;
+    color: #CDCDCD;
+    font-weight: 400;
+}
+
+.conf-police-link {
+    text-decoration: underline;
+    transition: color 0.2s ease;
+}
+
+.checkbox-checked,
+.checkbox-error-not-checked,
+.checkbox {
+    width: 2rem;
+    height: 2rem;
+    border: 1px solid #cdcdcd;
+    border-radius: 0.125rem;
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+}
+
+.checkbox-error-not-checked {
+    background-color: #fd5656;
+    border-color: #fd5656;
+}
+
+.checkbox-checked {
+    position: relative;
+}
+
+.checkbox-checked::after {
+    content: '';
+    display: block;
+    width: 0.75rem;
+    height: 1.5rem;
+    border-bottom: 2px solid #fdb056;
+    border-right: 2px solid #fdb056;
+    transform: rotate(45deg);
+    position: absolute;
+    bottom: 4px;
+    right: 10px;
+}
+
+button {
+    width: 22rem;
+    height: 4rem;
+    cursor: pointer;
+    background-color: #fdb056;
+    font-size: 1.25rem;
+    color: #191e1f;
+    font-weight: 700;
+    border-radius: 1rem;
+    margin-top: 0.75rem;
+    transition: all 0.3s;
+}
+
+.small-grey-text {
+    color: #9b9b9b;
+    font-weight: 400;
+    font-size: 0.875rem;
+    width: 750px;
+    margin-top: 0.5rem;
+}
+
+.warranty {
+    border: 1px solid #484d4e;
+    border-radius: 1rem;
+    padding: 1rem 2rem;
+    margin-bottom: 2.5rem;
+    width: 100%;
+    text-align: left;
+}
+
+.warranty-title {
+    color: #81fe95;
+    border: 1px solid #81fe95;
+    border-radius: 9999px;
+    padding: 1rem 2rem;
+    font-size: 1.5rem;
+    font-weight: 500;
+    text-align: center;
+    margin-bottom: 1rem;
+    width: 400px;
+}
+
+.warranty-text {
+    color: #dcdcdc;
+    font-size: 1.25rem;
+    font-weight: 400;
+}
+
+/*   Анимация   */
+
+.red-blink {
+    animation: red-blink 0.5s infinite;
+}
+
+button:hover {
+    animation: btn-blink 0.5s infinite alternate;
+}
+
+@keyframes red-blink {
+    0%, 50%, 100% {
+        opacity: 1;
+        color: #FD5656;
+    }
+    25%, 75% {
+        opacity: 0.2;
+        color: #FD5656;
+    }
+}
+
+@keyframes btn-blink {
+    0%, 50%, 100% {
+        box-shadow: 0 0 5px #FFD58033, 0 0 10px #FFD58022;
+        opacity: 0.2;
+        background-color: #FDB056;
+    }
+    25%, 75% {
+        box-shadow: 0 0 20px #FFD58099, 0 0 40px #FFD58066;
+        opacity: 1;
+        background-color: #FDB056;
+    }
+}
+
+/*  Адаптив */
+
+@media (max-width: 1200px) {
+    .best-result, .warranty, .small-grey-text, button {
+        width: 100%;
+    }
+
+    .best-text {
+        width: 40%;
+    }
+
+    .best {
+        width: 100%;
+    }
+
+    .man-container {
+        width: 40%;
+    }
+
+    .best {
+        width: 100%;
+    }
+
+    form {
+        width: 60%;
+    }
+}
+
+@media (max-width: 600px) {
+    header {
+        height: fit-content;
+        padding: 15px;
+        width: 100%;
+    }
+
+    .main-container {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .man-container {
+        width: 40%;
+    }
+
+    form {
+        width: 100%;
+    }
+
+    h1 {
+        font-size: 52px;
+    }
+
+    .warranty-text, .warranty-title, .best-result-text, .conf-police, .agreement {
+        font-size: 20px;
+    }
+
+    .small-grey-text {
+        font-size: 15px;
+    }
+
+    button {
+        padding: 20px;
+        font-size: 30px;
+        height: fit-content;
+    }
+}
