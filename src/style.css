@@ -140,6 +140,7 @@ main {
 .conf-police-link {
     text-decoration: underline;
     transition: color 0.2s ease;
+    color: white;
 }
 
 .checkbox-checked,
@@ -228,12 +229,32 @@ button {
 
 /*   Анимация   */
 
+.checkbox-checked:hover,
+.checkbox-error-not-checked:hover,
+.checkbox:hover{
+    animation: checkbox-blink 1s infinite;
+}
+
+@keyframes checkbox-blink {
+    0%, 100% {
+        box-shadow: 0 0 10px #FDB056;
+    }
+    50% {
+        box-shadow: 0 0 20px #FDB056;
+    }
+}
+
+.conf-police-link:hover{
+    color: #fdb056;
+}
+
 .red-blink {
     animation: red-blink 0.5s infinite;
 }
 
 button:hover {
     animation: btn-blink 0.5s infinite alternate;
+    border: none;
 }
 
 @keyframes red-blink {
