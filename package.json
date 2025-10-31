@@ -1,5 +1,5 @@
 {
-  "name": "vite-project",
+  "name": "sportCoursePage",
   "private": true,
   "version": "0.0.0",
   "type": "module",
@@ -7,7 +7,7 @@
   "scripts": {
     "dev": "vite",
     "build": "vite build",
-    "lint": "vite-project/node_modules/.bin/eslint .",
+    "lint": "eslint .",
     "preview": "vite preview",
     "predeploy": "npm run build",
     "deploy": "gh-pages -d dist"
